@@ -27,3 +27,47 @@ main p {
   font-family: "Roboto", sans-serif;
   margin-top: 0;
 }
+/* wraps each group (images and text) to set the width for the group container */
+.group img {
+  width: 100%;
+}
+
+/* each singleFlex element will take up one unit of space in a Flex Container.
+If there are 3 or 4 .singleFlex elements inside a .group container, for screens bigger than 800px, they'll take up equal space in a row.
+For screens smaller than 800px, they'll stack in a column. */
+.singleFlex {
+  flex: 1;
+  margin: 10px;
+}
+
+/* takes up 2 unites of space in a Flex Container*/
+.doubleFlex {
+  flex: 2;
+  margin: 10px;
+}
+
+/* stacks elements in a column */
+.group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+
+/* Media query adjusts the layout when screen width is 800px or more */
+@media all and (min-width: 800px ) {
+  section {
+    padding: 0 10%;
+  }
+
+  /* When screen's width is 800px or more, elements will be in a row */
+.group {
+  display: flex;
+  flex-direction: row;
+}
+
+/* images will take up full container width, whether in row or column */
+img {
+   width: 100%;
+ }
+
+}
